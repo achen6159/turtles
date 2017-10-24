@@ -1,46 +1,41 @@
+import math
+radius=int(input("What is the radius of the flower? "))
+petals=int(input("How many petals do you want? "))
+#radius=100
+#petals=4
+
 import turtle
-from random import randint
+bob = turtle.Turtle()
+bob.speed(100)
+bob.shape("turtle")
+bob.color("medium sea green")
 
-size = 20
-circles = 20
-turtle.speed(100)
 
-turtle.colormode(255)
+def draw_arc(b,r):  
+    bob.speed(100)
+    c = 2*math.pi*r 
+    ca = c/(360/60)  
+    n = int(ca/3)+1 
+    l = ca/n  
+    for i in range(n):
+        bob.fd(l)
+        bob.lt(360/(n*6))
 
-def move(length, angle):
-                turtle.right(angle)
-                turtle.forward(length)
+def draw_petal(b,r):
+    bob.speed(100)
+    draw_arc(b,r)
+    b.lt(180-60)
+    draw_arc(b,r)
 
-def hex():
-        turtle.pendown()
-        turtle.color( randint(0,255),randint(0,255),randint(0,255) )
-        turtle.begin_fill()
-        for i in range(6):
-                move(size,-60)
-        turtle.end_fill()
-        turtle.penup()
 
-# start
-turtle.penup()
+#draw_petal(bob,radius)
 
-for circle in range (circles):
-        if circle == 0:
-                hex()
-                move(size,-60)
-                move(size,-60)
-                move(size,-60)
-                move(0,180)
-        for i in range (6):
-                move(0,60)
-                for j in range (circle+1):
-                        hex()
-                        move(size,-60)
-                        move(size,60)
-                move(-size,0)
-        move(-size,60)
-        move(size,-120)
-        move(0,60)
+for i in range(petals):
+    draw_petal(bob,radius)
+    bob.lt(360/petals)
 
-turtle.pendown()
 
-done()
+turtle.done()
+
+
+
