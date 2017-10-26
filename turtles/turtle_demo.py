@@ -3,8 +3,6 @@ from turtle import *
 import math
 radius=int(input("What is the radius of the flower? "))
 petals=int(input("How many petals do you want? "))
-#radius=100
-#petals=4
 
 import turtle
 bob = turtle.Turtle()
@@ -26,9 +24,6 @@ def draw_petal(b,r):
     draw_arc(b,r)
     b.lt(180-60)
     draw_arc(b,r)
-
-
-#draw_petal(bob,radius)
 
 for i in range(petals):
     draw_petal(bob,radius)
