@@ -8,11 +8,10 @@ import turtle
 bob = turtle.Turtle()
 bob.speed(100)
 bob.shape("turtle")
-bob.color("medium sea green")
+bob.color("gold")
 
 
 def draw_arc(b,r):  
-    bob.speed(100)
     c = 2*math.pi*r 
     ca = c/(360/60)  
     n = int(ca/3)+1 
@@ -22,7 +21,6 @@ def draw_arc(b,r):
         bob.lt(360/(n*6))
 
 def draw_petal(b,r):
-    bob.speed(100)
     draw_arc(b,r)
     b.lt(180-60)
     draw_arc(b,r)

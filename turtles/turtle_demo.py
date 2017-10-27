@@ -29,12 +29,7 @@ for i in range(petals):
     draw_petal(bob,radius)
     bob.lt(360/petals)
 
-
-
-while True:
-    ctypes.windll.user.MessageBox(0, "press r for red, g for green, b for blue, and p for purple")
-    time.sleep(5)
-    break()
+bob.clear()
 
 screen = turtle.Screen()
 screen.bgcolor("light sky blue")
@@ -85,6 +80,13 @@ draw_star(annie, -150, 0, 36, (124, 252, 0), (255, 69, 0))
 saleem.speed(100)
 draw_star(saleem, -200, 0, 36, (0, 206, 209), (255, 0, 0))
 
+import ctypes
+import time
+
+while True:
+    ctypes.windll.user32.MessageBoxW(0, "b for blue, g for green, p for purple, and y for yellow", "Instructions", 1)
+    time.sleep(5)
+    break
 
 mere = Turtle()
 mere.shape("turtle")
